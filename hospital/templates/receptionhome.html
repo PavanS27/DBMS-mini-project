@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    {% include 'include.html' %} {% load static %}
+  </head>
+
+  <body>
+    {% include 'adminnav.html' %}
+    <div id="wrapper">
+      {% include 'reception_nav.html' %}
+      <div class="page-content-wrapper">
+        <div class="container-fluid">
+          <a
+            class="btn btn-link"
+            role="button"
+            id="menu-toggle"
+            href="#menu-toggle"
+            ><i class="fa fa-bars"></i
+          ></a>
+          <div class="row">
+            <div class="col-md-12">
+              <div>
+                <h1 class="text-center">
+                  Welcome Receptionist
+                  <img
+                    src="{% static 'img/2941466.svg' %}"
+                    width="60px"
+                    height="60px"
+                    alt="10px"
+                  />
+                </h1>
+                <h3 class="text-center mt-5">
+                  Navigate yourself using the below links
+                </h3>
+              </div>
+            </div>
+          </div>
+          <div class="row mt-5" style="margin-left: 150px">
+            <div class="col-md-4">
+              <a href="{% url 'profile' %}">
+                <img
+                  src="{% static 'img/2948218.svg' %}"
+                  width="100px"
+                  height="100px"
+                  alt="10px"
+              /></a>
+            </div>
+
+            <div class="col-md-4">
+              <a href="{% url 'viewappointment' %}">
+                <img
+                  src="{% static 'img/2829931.svg' %}"
+                  width="100px"
+                  height="100px"
+                  alt="10px"
+              /></a>
+            </div>
+            <div class="col-md-4">
+              <a href="{% url 'Logout' %}">
+                <img
+                  src="{% static 'img/1716282.svg' %}"
+                  width="100px"
+                  height="100px"
+                  alt="10px"
+              /></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    {% include 'redirecthome.html' %}
+    <script src="{% static 'js/jquery.min.js' %}"></script>
+    <script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'js/back-to-top-scroll.js' %}"></script>
+    <script src="{% static 'js/Bold-BS4-Animated-Back-To-Top.js' %}"></script>
+    <script src="{% static 'js/bs-init.js' %}"></script>
+    <script src="{% static 'js/Sidebar-Menu.js' %}"></script>
+  </body>
+</html>

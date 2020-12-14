@@ -1,0 +1,34 @@
+<div id="sidebar-wrapper">
+  <div
+    style="
+      height: 200px;
+      background-color: grey;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+    "
+  >
+    <img
+      src="https://www.flaticon.com/svg/static/icons/svg/2206/2206368.svg"
+      width="80"
+      height="80"
+    />
+    <h3 style="width: 100%; text-align: center">Name</h3>
+    <h5 style="width: 100%; text-align: center">Email</h5>
+  </div>
+  <div class="dropdown">
+    <ul class="sidebar-nav">
+      <li><a href="{% url 'adminhome' %}">Dashboard</a></li>
+      <!-- style="color: white;background-color: grey;"-->
+      <li><a href="{% url 'adminaddDoctor' %}">Add Doctor</a></li>
+      <li><a href="{% url 'adminviewDoctor' %}">View Doctors</a></li>
+      <li><a href="{% url 'adminaddReceptionist' %}">Add Receptionist</a></li>
+      <li>
+        <a href="{% url 'adminviewReceptionist' %}">View Receptionists</a>
+      </li>
+      <li><a href="{% url 'adminviewAppointment' %}">View Appointments</a></li>
+      <li><a href="{% url 'adminlogout' %}">Logout</a></li>
+    </ul>
+  </div>
+</div>

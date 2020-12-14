@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    {% include 'include.html' %} {% load static %}
+  </head>
+  <body>
+    {% include 'adminnav.html' %}
+    <div id="wrapper">
+      {% include 'sidenav.html' %}
+
+      <h2 style="width: 100%; padding: 20px; text-align: center">
+        Recent Prescription
+      </h2>
+      {% for d in pres %}
+      <div class="card">
+        <div
+          style="
+            width: 100%;
+            height: 20vh;
+            background-color: lightblue;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+          "
+        >
+          <h2 style="letter-spacing: 10px; width: 40%">HAMS</h2>
+          <img
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Caduceus.svg/1200px-Caduceus.svg.png"
+            style="width: 100px"
+          />
+          <p
+            style="
+              width: 100%;
+              position: absolute;
+              top: 10%;
+              left: 4%;
+              font-size: 13px;
+            "
+          >
+            [202, Rashtriya Vidyalaya Rd, 2nd Block, Basavanagudi]
+          </p>
+        </div>
+        <hr />
+        <div
+          style="
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            flex-wrap: wrap;
+          "
+        >
+          <h2 style="color: rgb(47, 146, 179); width: 50%">{{d.doctorname}}</h2>
+          <p style="font-size: 14px">Prescription No: 1234567</p>
+          <p
+            style="
+              font-size: 14px;
+              position: absolute;
+              left: 0;
+              margin-top: 80px;
+              margin-left: 60px;
+            "
+          >
+            [{{d.doctoremail}}]
+          </p>
+        </div>
+        <hr />
+        <div
+          style="
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            flex-wrap: wrap;
+            height: 20vh;
+            padding-bottom: 100px;
+          "
+        >
+          <h3>{{d.symptoms}} ------ {{d.prescription}}</h3>
+        </div>
+        {% for d in pat %}
+        <div
+          style="
+            display: flex;
+
+            align-items: flex-start;
+            flex-wrap: wrap;
+            padding: 20px;
+            text-align: left;
+          "
+        >
+          <h6 style="color: rgb(24, 112, 141); width: 100%; font-size: 13px">
+            Patient Name : {{d.name}}
+          </h6>
+          <h6 style="color: rgb(24, 112, 141); width: 100%; font-size: 13px">
+            Patient Email : {{d.email}}
+          </h6>
+          <h6 style="color: rgb(24, 112, 141); width: 100%; font-size: 13px">
+            Patient Address : {{d.address}}
+          </h6>
+          <h6 style="color: rgb(24, 112, 141); width: 100%; font-size: 13px">
+            Patient Ph.number : {{d.phonenumber}}
+          </h6>
+        </div>
+        {% endfor %}
+        <div
+          style="
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            flex-wrap: wrap;
+            background-color: lightblue;
+            height: 6vh;
+          "
+        >
+          <h6>
+            <i class="fa fa-phone" style="font-size: 16px"></i> : [123-456-789]
+          </h6>
+          <h6>
+            <i class="fa fa-envelope" style="font-size: 16px"></i> :
+            [admin@gmail.com]
+          </h6>
+        </div>
+      </div>
+
+      {% endfor %}
+    </div>
+
+    <script src="{% static 'js/jquery.min.js' %}"></script>
+    <script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'js/back-to-top-scroll.js' %}"></script>
+    <script src="{% static 'js/Bold-BS4-Animated-Back-To-Top.js' %}"></script>
+    <script src="{% static 'js/bs-init.js' %}"></script>
+    <script src="{% static 'js/Sidebar-Menu.js' %}"></script>
+    <script type="text/javascript">
+      var x = document.getElementById("random");
+      x.innerHTML = Math.floor(Math.random() * 7000000 + 1);
+    </script>
+  </body>
+  <style>
+    .card {
+      height: 80vh;
+      width: 80vh;
+      border: 1px solid lightgrey;
+      box-shadow: 0.5px 0px 30px 2px rgba(211, 211, 211, 0.315);
+      position: absolute;
+      left: 40%;
+    }
+  </style>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    {% include 'include.html' %} {% load static %}
+  </head>
+
+  <body id="bg">
+    {% include 'navbar.html' %}
+    <section
+      class="general-area-home"
+      style="width: 45%; font-family: 'Noto Sans JP', sans-serif"
+    >
+      <h1 style="color: white; text-shadow: 1px 2px black">
+        Book your consultation with your doctor anywhere!
+      </h1>
+      <h3 class="mt-5" style="text-shadow: 1px 1px grey">
+        Create an account and save your profile, then book your appointment.
+      </h3>
+      <div class="row" id="row1">
+        <div class="col offset-lg-0 mt-2">
+          <a href="{% url 'signup' %}">
+            <button
+              class="btn btn-success mt-5"
+              type="button"
+              style="
+                border-radius: 30px;
+                padding: 15px 50px;
+                box-shadow: 1px 1px 10px grey;
+              "
+            >
+              Book Appointment
+            </button></a
+          >
+        </div>
+      </div>
+    </section>
+    <script src="{% static 'js/jquery.min.js' %}"></script>
+    <script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'js/back-to-top-scroll.js' %}"></script>
+    <script src="{% static 'js/Bold-BS4-Animated-Back-To-Top.js' %}"></script>
+    <script src="{% static 'js/bs-init.js' %}"></script>
+    <script src="{% static 'js/Sidebar-Menu.js' %}"></script>
+  </body>
+  <style>
+    #bg {
+      background-image: url("{% static 'img/pexels-photo-4173239.jpeg' %}");
+      background-size: 100%;
+      background-repeat: no-repeat;
+    }
+  </style>
+</html>
